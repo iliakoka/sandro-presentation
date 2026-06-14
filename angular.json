@@ -33,6 +33,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/sandro-presentation/",
               "budgets": [
                 {
                   "type": "initial",
@@ -71,7 +72,11 @@
           "builder": "@angular/build:unit-test"
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/sandro-presentation/",
+            "buildTarget": "sandro-presentation:build:production"
+          }
         }
       }
     }
